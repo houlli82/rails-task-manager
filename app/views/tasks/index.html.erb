@@ -1,0 +1,9 @@
+  <h1>My Tasks</h1>
+  <%= link_to "Add New Task", new_task_path %>
+  <ul>
+    <% @tasks.each_with_index do |task, index| %>
+      <p><%= task.title %>
+      <%= task.completed ? "☑" : "☐" %></p>
+      <%= link_to "Check it out!", task_path(task) %>
+    <% end %>
+  </ul>

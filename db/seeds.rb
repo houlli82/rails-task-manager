@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating 10 tasks"
+
+10.times do |task|
+  Task.create!(
+    title: Faker::Verb.base,
+    details: Faker::Marketing.buzzwords,
+    completed: Faker::Boolean.boolean
+  )
+end
+
+puts "DONE!"
